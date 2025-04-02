@@ -1,0 +1,74 @@
+*{
+    font-family: 'Rubik';
+}
+
+body{
+    background-color:#96c696;
+}
+
+.main-container{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputfeilds{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center; /* Centers the form */
+    width: 90%; /* Allow some margin on smaller screens */
+    max-width: 100%;
+    padding-bottom: 50px;
+    border: 2px solid black;
+    border-radius:20px ;
+    font-size: 1.5rem;
+    background-color: #D1D3C4;
+}
+
+label {
+    display: block; /* Forces label to take full width and stay above the input */
+    margin-bottom: 5px; 
+    font-weight: bold;
+}
+
+#submit{
+    width: 50%;
+    height: 20%;
+    font-family: 'rubik';
+    font-size: 1rem;
+    border-radius: 20px;
+}
+
+#submit:hover{
+    background-color: #96c696;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 90%;
+    max-width: 400px; /* Prevents overly large inputs on wide screens */
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 20px;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border: 3px solid #96c696;
+}
+
+
+@media (max-width: 600px) {
+    input[type="text"],
+    input[type="number"],
+    #submit {
+        width: 100%; /* Use full width on small screens */
+    }
+}
+
+
