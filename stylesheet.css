@@ -69,6 +69,9 @@ input[type="number"]:focus {
     #submit {
         width: 100%; /* Use full width on small screens */
     }
+    #submit{
+        height: 50px;
+    }
 }
 
 
