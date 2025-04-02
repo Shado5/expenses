@@ -36,7 +36,7 @@ label {
 
 #submit{
     width: 50%;
-    height: 20%;
+    height: 50px;
     font-family: 'rubik';
     font-size: 1rem;
     border-radius: 20px;
@@ -64,11 +64,7 @@ input[type="number"]:focus {
 
 
 @media (max-width: 600px) {
-    body{
-        background-color: red;
-    }
-
-    input[type="text"],
+       input[type="text"],
     input[type="number"],
     #submit {
         width: 100%; /* Use full width on small screens */
