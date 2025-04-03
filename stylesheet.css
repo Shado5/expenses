@@ -42,6 +42,7 @@ label {
     font-family: 'rubik';
     font-size: 1rem;
     border-radius: 20px;
+    border: 2px solid black;
 }
 
 #submit:hover{
@@ -57,6 +58,7 @@ input[type="number"] {
     box-sizing: border-box;
     border-radius: 20px;
     outline: none;
+    border: 2px solid black;
 }
 
 input[type="text"]:focus,
@@ -87,7 +89,14 @@ input[type="number"]:focus {
     width: 10%;
     height: auto;
     border-color: red;
-    text-align: center;
+    text-align: center; 
+}
+
+#saveicon{
+    border-radius: 20px;
+    width: 20%;
+    height: 20%;
+    border: 2px solid black;
 }
 
 @media (max-width: 600px) {

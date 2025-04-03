@@ -14,15 +14,19 @@
             <h1>Expense Tracker</h1>    
             <form onsubmit="enterValue(); return false;">
                 <label for="item-name"> Item name</label>
-                <input id="itemname" name="item-name" type="text" placeholder="Item Name">
+                <input id="itemname" name="item-name" type="text" placeholder="Item Name" autocomplete="off">
 
                 <label for="amount"> Amount</label>    
-                <input id="value" name="amount" type="number" placeholder="Amount">
+                <input id="value" name="amount" type="number" placeholder="Amount" autocomplete="off">
 
                 <input id="submit" type="submit" value="Submit"></input>
             </form>
-            <h1 style="font-size: 1.75rem;">Total:$<span id="total">0</span></h1>
-            
+            <div style="display: flex;align-items: center; justify-content: center; gap: 10px;">
+                <h1 style="font-size: 1.75rem;">Total:$<span id="total">0</span></h1>
+                <button id="saveicon" type="button" onclick="saveToLocalStorage()">
+                    <img id="saveiconimg" style="width: 70%;" src="images/saveicon.png">
+                </button>
+            </div>
         </div>
         
     </div>

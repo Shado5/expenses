@@ -2,10 +2,19 @@ const expenses = [];
 let total = 0; 
 let itemName = "";
 
+window.onload = function () {
+    // Load data from localStorage when the page loads
+    const savedExpenses = JSON.parse(localStorage.getItem("expenses")) || [];
+    savedExpenses.forEach(expense => {
+        expenses.push(expense); // Add them to the array
+        createDiv(expense.name, expense.value);
+    });
+}
+
 function enterValue() {
     let itemValue = parseFloat(document.getElementById("value").value);
     itemName = document.getElementById("itemname").value;
-
+        document.getElementById("saveiconimg").src = "images/saveicon.png";
     
         // Push an object with both name and value to the expenses array
         expenses.push({ name: itemName, value: itemValue });
@@ -16,7 +25,6 @@ function enterValue() {
         
         // Create a div displaying the item name and value
         createDiv(itemName, itemValue);
-   
 }
 
 function createDiv(name, value) {
@@ -45,6 +53,7 @@ function createDiv(name, value) {
 
         // Remove the div from the DOM
         newItem.remove();
+        document.getElementById("saveiconimg").src = "images/saveicon.png";
     });
 
     // Append the delete button to the newItem div
@@ -54,4 +63,11 @@ function createDiv(name, value) {
     let container = document.querySelector(".inputfeilds");
     container.appendChild(newItem);
 }
+
+function saveToLocalStorage() {
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+    alert("Expenses saved!");
+    document.getElementById("saveiconimg").src = "images/saved.png";
+}
+
 
