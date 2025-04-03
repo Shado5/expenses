@@ -7,7 +7,7 @@ body{
 }
 
 .main-container{
-    max-width: 70%;
+    max-width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,6 +87,7 @@ input[type="number"]:focus {
     width: 10%;
     height: auto;
     border-color: red;
+    text-align: center;
 }
 
 @media (max-width: 600px) {
