@@ -12,17 +12,19 @@
         
         <div class="inputfeilds">
             <h1>Expense Tracker</h1>    
-            <form>
+            <form onsubmit="enterValue(); return false;">
                 <label for="item-name"> Item name</label>
-                <input name="item-name" type="text" placeholder="Item Name">
+                <input id="itemname" name="item-name" type="text" placeholder="Item Name">
 
                 <label for="amount"> Amount</label>    
-                <input name="amount" type="number" placeholder="Amount">
+                <input id="value" name="amount" type="number" placeholder="Amount">
 
                 <input id="submit" type="submit" value="Submit"></input>
             </form>
+            <h1 style="font-size: 1.75rem;">Total:$<span id="total">0</span></h1>
             
         </div>
+        
     </div>
 </body>
 </html>

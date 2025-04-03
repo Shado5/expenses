@@ -7,10 +7,16 @@ body{
 }
 
 .main-container{
-    max-width: 100%;
+    max-width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    border: 2px solid black;
+    margin: auto;
+    border-radius:20px ;
+    background-color: #D1D3C4;
+
 }
 
 .inputfeilds{
@@ -18,14 +24,10 @@ body{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    align-items: center; /* Centers the form */
-    width: 90%; /* Allow some margin on smaller screens */
+    align-items: center;
     max-width: 100%;
     padding-bottom: 50px;
-    border: 2px solid black;
-    border-radius:20px ;
     font-size: 1.5rem;
-    background-color: #D1D3C4;
 }
 
 label {
@@ -62,9 +64,33 @@ input[type="number"]:focus {
     border: 3px solid #96c696;
 }
 
+.item{
+    border:2px solid black;
+    display: block;
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    overflow: auto;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.deleteButton{
+    font-weight: 500;
+    font-size: larger;
+    color: white;
+    background-color: red;
+    border-radius: 50px;
+    width: 10%;
+    height: auto;
+    border-color: red;
+}
 
 @media (max-width: 600px) {
-       input[type="text"],
+    input[type="text"],
     input[type="number"],
     #submit {
         width: 100%; /* Use full width on small screens */
