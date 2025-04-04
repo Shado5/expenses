@@ -9,6 +9,7 @@ window.onload = function () {
         expenses.push(expense); // Add them to the array
         createDiv(expense.name, expense.value);
     });
+    console.log(savedExpenses);
 }
 
 function enterValue() {
@@ -30,7 +31,7 @@ function enterValue() {
 
 function createDiv(name, value) {
     let newItem = document.createElement("div");
-    newItem.textContent = `${name}: $${value.toFixed(2)}`; // Display name and value
+    newItem.textContent = `${name}: $${value?.toFixed(2) ?? 0}`; // Display name and value
     newItem.classList.add("item");
 
     // Create a delete button
@@ -61,7 +62,7 @@ function createDiv(name, value) {
     newItem.appendChild(deleteBtn);
 
     // Append the newItem div to the container
-    let container = document.querySelector(".inputfeilds");
+    let container = document.querySelector(".inputfields");
     container.appendChild(newItem);
 }
 
@@ -76,7 +77,7 @@ function searchExpenses(event) {
 
     const query = document.querySelector(".search-input").value.toLowerCase();
     const items = document.querySelectorAll(".item");
-    const container = document.querySelector(".inputfeilds");
+    const container = document.querySelector(".inputfields");
 
     let bestMatch = null;
 
