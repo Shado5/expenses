@@ -24,7 +24,8 @@ function enterValue() {
         document.getElementById("total").innerHTML = total;
         
         // Create a div displaying the item name and value
-        createDiv(itemName, itemValue);
+    createDiv(itemName, itemValue);
+
 }
 
 function createDiv(name, value) {
@@ -68,6 +69,41 @@ function saveToLocalStorage() {
     localStorage.setItem("expenses", JSON.stringify(expenses));
     alert("Expenses saved!");
     document.getElementById("saveiconimg").src = "images/saved.png";
+}
+
+function searchExpenses(event) {
+    event.preventDefault();
+
+    const query = document.querySelector(".search-input").value.toLowerCase();
+    const items = document.querySelectorAll(".item");
+    const container = document.querySelector(".inputfeilds");
+
+    let bestMatch = null;
+
+    items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(query)) {
+            if (!bestMatch || text.startsWith(query)) {
+                bestMatch = item;
+            }
+        }
+    });
+
+    if (bestMatch) {
+        // Find the index of the first .item div
+        let firstItem = Array.from(container.children).find(child => child.classList.contains("item"));
+        
+        if (firstItem) {
+            container.insertBefore(bestMatch, firstItem);
+        } else {
+            container.appendChild(bestMatch); // Fallback
+        }
+
+        bestMatch.style.backgroundColor = "#ffffcc"; // optional highlight
+        setTimeout(() => bestMatch.style.backgroundColor = "", 1500);
+    } else {
+        alert("No match found.");
+    }
 }
 
 

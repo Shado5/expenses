@@ -16,6 +16,7 @@ body{
     margin: auto;
     border-radius:20px ;
     background-color: #D1D3C4;
+    flex-direction: column;
 
 }
 
@@ -26,7 +27,7 @@ body{
     text-align: center;
     align-items: center;
     max-width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     font-size: 1.5rem;
 }
 
@@ -50,7 +51,7 @@ label {
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"]{
     width: 90%;
     max-width: 400px; /* Prevents overly large inputs on wide screens */
     padding: 12px;
@@ -99,11 +100,53 @@ input[type="number"]:focus {
     border: 2px solid black;
 }
 
+.search-bar{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.search{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    padding: 8px;
+    border-radius: 28px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+.search:focus-within{
+    border-color: #96c696;
+}
+.search-icon{
+    background: transparent;
+    border: none;
+}
+
+.search-input{
+     width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+}
+.search-input:focus{
+    outline: none;
+}
+
 @media (max-width: 600px) {
     input[type="text"],
     input[type="number"],
     #submit {
         width: 100%; /* Use full width on small screens */
+    }
+
+    .search-input{
+        font-size: 1rem;
     }
 }
 
