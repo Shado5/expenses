@@ -14,7 +14,11 @@ window.onload = function () {
 
 function enterValue() {
     let itemValue = parseFloat(document.getElementById("value").value);
-    itemName = document.getElementById("itemname").value;
+    if (Number.isNaN(itemValue)) {
+        window.alert("Please enter a number");
+    }
+    else {
+     itemName = document.getElementById("itemname").value;
         document.getElementById("saveiconimg").src = "images/saveicon.png";
     
         // Push an object with both name and value to the expenses array
@@ -25,7 +29,8 @@ function enterValue() {
         document.getElementById("total").innerHTML = total;
         
         // Create a div displaying the item name and value
-    createDiv(itemName, itemValue);
+    createDiv(itemName, itemValue);   
+    }
 
 }
 

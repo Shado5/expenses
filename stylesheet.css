@@ -98,6 +98,8 @@ input[type="number"]:focus {
     width: 20%;
     height: 20%;
     border: 2px solid black;
+    background: transparent;
+    border: none;
 }
 
 .search-bar{
